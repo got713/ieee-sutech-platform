@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap');
+
+:root {
+  /* IEEE Official Colors */
+  --ieee-blue: #003366;
+  --ieee-orange: #F7941D;
+  --ieee-purple: #6a0dad;
+  --ieee-light-blue: #006699;
+  --ieee-gray: #666666;
+  --ieee-light-gray: #f4f4f4;
+  
+  /* UI Colors */
+  --bg-body: #f8f9fc;
+  --card-shadow: 0 4px 20px rgba(0, 51, 102, 0.08);
+  --transition-speed: 0.3s;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-body);
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: var(--ieee-blue);
+}
+
+/* Custom Card Styles */
+.ieee-card {
+  background: white;
+  border: none;
+  border-radius: 15px;
+  box-shadow: var(--card-shadow);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  overflow: hidden;
+}
+
+.ieee-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 51, 102, 0.12);
+}
+
+/* Gradient Backgrounds */
+.bg-ieee-gradient {
+  background: linear-gradient(135deg, var(--ieee-blue) 0%, var(--ieee-light-blue) 100%);
+}
+
+.bg-accent-gradient {
+  background: linear-gradient(135deg, var(--ieee-orange) 0%, #ffb347 100%);
+}
+
+/* Custom Buttons */
+.btn-ieee {
+  background-color: var(--ieee-blue);
+  color: white;
+  border-radius: 8px !important;
+  padding: 10px 20px;
+  font-weight: 600;
+  transition: all var(--transition-speed);
+  border: none;
+}
+
+.btn-ieee:hover {
+  background-color: var(--ieee-light-blue);
+  color: white;
+  transform: scale(1.02);
+}
+
+.btn-purple {
+  background-color: var(--ieee-purple);
+  color: white;
+  border-radius: 8px !important;
+  padding: 10px 20px;
+  font-weight: 600;
+  transition: all var(--transition-speed);
+  border: none;
+}
+
+.btn-purple:hover {
+  background-color: #7b1fa2;
+  color: white;
+  transform: scale(1.02);
+}
+
+.btn-accent {
+  background-color: var(--ieee-orange);
+  color: white;
+  border-radius: 8px !important;
+  padding: 10px 20px;
+  font-weight: 600;
+  border: none;
+}
+
+.btn-accent:hover {
+  background-color: #e67e22;
+  color: white;
+}
+
+/* Points Progress Bar */
+.progress-points {
+  height: 10px;
+  border-radius: 5px;
+  background-color: #eee;
+  overflow: hidden;
+}
+
+.progress-points-fill {
+  height: 100%;
+  border-radius: 5px;
+  background: var(--ieee-orange);
+  transition: width 1s ease-in-out;
+}
+
+/* Timeline Styles */
+.timeline-container {
+  position: relative;
+  padding-left: 30px;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--ieee-blue);
+  z-index: 1;
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  left: -15px;
+  top: 20px;
+  width: 2px;
+  height: calc(100% - 10px);
+  background-color: #ddd;
+}
+
+/* Skeleton Loader */
+@keyframes shimmer {
+  0% { background-position: -468px 0; }
+  100% { background-position: 468px 0; }
+}
+
+.skeleton {
+  background: #f6f7f8;
+  background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+  background-repeat: no-repeat;
+  background-size: 800px 104px;
+  display: inline-block;
+  position: relative;
+  animation: shimmer 1s linear infinite forwards;
+}
